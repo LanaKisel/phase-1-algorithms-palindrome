@@ -1,12 +1,23 @@
+// first solution:
+//  function isPalindrome(word) {
+//   let backwards = word.split("").reverse().join("")
+//   return backwards === word
+// }
+
+//second solution:
 function isPalindrome(word) {
-  let backwards = word.split("").reverse().join("")
-    return backwards === word
-     
+  for (let i = 0; i < word.length / 2; i++) {
+    const j = word.length - 1 - i
+    const startChar = word[i]
+    const endChar = word[j]
+    if (startChar !== endChar)
+      return false
+  } return true
+}
+
   // Write your algorithm here
   //write function that has 1 argument -  a string. the code checks if the string is a palindrome, meaning if you read it backwords it should look the same
   //and if it is palindrome function should return true and false if it's not.
-
-}
 
 /* 
   Add your pseudocode here
@@ -22,7 +33,7 @@ function isPalindrome(word) {
 
 /*
   Add written explanation of your solution here
-  split string to an array, so I can reverse it. use .join() to make it a string again.
+  split string to an array using .split(""), so I can reverse it. use .join("") to make it a string again.
   use "===" to return true
 */
 
